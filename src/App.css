@@ -21,8 +21,8 @@
 
 .App .current-temp {
   text-transform: capitalize;
-  font-size: 80px;
-  padding: 30px 30px;
+  font-size: 100px;
+  padding: 10px 10px;
 }
 
 .App #current-temp {
@@ -33,9 +33,10 @@
 
 .App .currentHighLow {
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 .App .weather-icon-now {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 65px;
   padding: 30px 25px 10px 25px;
 }
@@ -46,7 +47,6 @@
   color: #bcc2fc;
   size: large;
 }
-
 
 .weather-description {
   text-transform: capitalize;
