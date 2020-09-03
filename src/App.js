@@ -1,14 +1,18 @@
 import React from "react";
 import "./App.css";
-import Weather from "./Weather.js";
+import Weather from "./CurrentConditions.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./Footer.js";
+import Forecast from "./Forecast.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello World!!! </h1>
-        <Weather city ="madrid"/>
-      </header>
+      <div className="weatherContainer">
+        <Weather />
+        <Forecast />
+        <Footer />
+      </div>
     </div>
   );
 }
