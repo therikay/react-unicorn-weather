@@ -31,11 +31,10 @@
   float: left;
 }
 
-.App .currentHighLow { 
+.App .currentHighLow {
   margin: 0 auto;
-
 }
-.App #weather-icon-now {
+.App .weather-icon-now {
   font-weight: 700;
   font-size: 65px;
   padding: 30px 25px 10px 25px;
@@ -48,16 +47,18 @@
   size: large;
 }
 
-.App .hi-low-temp-now {
-  padding: 150px 0 0 30px;
-}
 
-#weather-description {
+.weather-description {
   text-transform: capitalize;
 }
 
 .App .units {
-  margin-top: 35px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   float: right;
   margin-right: 15px;
+}
+
+.App .city {
+  color: #5d4b94;
 }

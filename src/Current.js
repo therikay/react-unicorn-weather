@@ -8,7 +8,7 @@ export default function Current() {
       <div className="row">
         <div className="col-6">
           <img src = "https://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id = "weather-icon-now"/>
-          <div id="city">
+          <div className="city" style = {{ fontSize :35, fontWeight: "bold" }}>
             Cardiff
           </div>    
           <div className = "timeAndDate">
@@ -29,7 +29,7 @@ export default function Current() {
           Low <span id="current-low"> 15 </span> 
           <span id="current-humidity"> 15% Humidity </span> 
           <span id ="weather-description"> Windy </span>        
-      </div>
+        </div>
   </div>
   </div>)
 ;
