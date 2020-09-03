@@ -3,8 +3,9 @@
   text-align: center;
 }
 
-.App .container {
+.App .weatherContainer {
   display: block;
+  margin: 0 auto;
   background-image: linear-gradient(
     -225deg,
     #2cd8d5 0%,
@@ -30,22 +31,25 @@
   float: left;
 }
 
+.App .currentHighLow { 
+  margin: 0 auto;
+
+}
 .App #weather-icon-now {
   font-weight: 700;
   font-size: 65px;
   padding: 30px 25px 10px 25px;
 }
 
-/*  fix this above */
-
 .App .signature {
   font-family: monospace;
   text-align: center;
   color: #bcc2fc;
+  size: large;
 }
 
 .App .hi-low-temp-now {
-  padding: 150px 0 0 0;
+  padding: 150px 0 0 30px;
 }
 
 #weather-description {
