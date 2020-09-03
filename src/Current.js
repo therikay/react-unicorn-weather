@@ -7,7 +7,7 @@ export default function Current() {
     <div className="currentConditions">
       <div className="row">
         <div className="col-6">
-          <img src = "https://openweathermap.org/img/wn/10d@2x.png" alt="Clear" id = "weather-icon-now"/>
+          <img src = "https://openweathermap.org/img/wn/10d@2x.png" alt="Clear" className= "icon"/>
           <div className="city" style = {{ fontSize :35, fontWeight: "bold" }}>
             Cardiff
           </div>    

@@ -35,10 +35,10 @@
   margin: 0 auto;
   margin-bottom: 10px;
 }
-.App .weather-icon-now {
-  font-weight: 600;
-  font-size: 65px;
-  padding: 30px 25px 10px 25px;
+.App .icon {
+  font-weight: 100;
+  font-size: 2rem;
+  padding: 30px 25px 10px 45px;
 }
 
 .App .signature {
