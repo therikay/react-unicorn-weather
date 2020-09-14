@@ -13,10 +13,10 @@ export default function Forecast() {
               <div>
                 <div className="temperature">
                   {" "}
-                  High <span className="forecast-hi">17 °C </span> | Low{" "}
+                   High <span className="forecast-hi">17 °C </span> | Low{" "}
                   <span className="forecast-lo">16 °C</span>
                 </div>
-                Humidity: 79 % | Wind: 6 m/s
+               Humidity 79% | Wind 6 m/s
               </div>
             </div>
           </li>
