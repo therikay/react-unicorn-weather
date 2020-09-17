@@ -1,19 +1,41 @@
-import React from "react";
-//import axios from "axios";
+import React, {useState} from "react";
+import axios from "axios";
 //import Loader from "react-loader-spinner";
 
-export default function Current() {
-  return (
+
+export default function CurrentWeather() {
+    const [weatherData, setWeatherData] = useState({ ready: false });
+  
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+        weatherData:true,
+        temperature: Math.round(response.data.main.temp),
+        high: Math.round(response.data.main.temp_max),
+        low: Math.round(response.data.main.temp_min),
+        wind: response.data.wind.speed,
+        city: response.data.name,
+        country: response.data.sys.country,
+        humidity: response.data.main,
+        description: response.data.weather[0].description,
+        iconUrl: "https://openweathermap.org/img/wn/01d@2x.png",
+        icon: response.data.weather[0].icon,
+  });
+   }
+
+  if (weatherData.ready) {
+    return (
     <div className="currentConditions">
       <div className="row">
         <div className="col-6">
-          <img
-            src="https://openweathermap.org/img/wn/10d@2x.png"
-            alt="Clear"
+            <img
+            
+            src={weatherData.icon}
+            alt={weatherData.description}
             className="icon"
           />
           <div className="city" style={{ fontSize: 35, fontWeight: "bold" }}>
-            Cardiff
+            {weatherData.city}, {weatherData.country}
           </div>
 
           
@@ -22,7 +44,7 @@ export default function Current() {
           <div className="currentTemperature">
             <div >
               {" "}
-              <h1 className="current-temp"> 25 </h1>{" "}
+              <h1 className="current-temp"> {weatherData.temperature} </h1>{" "}
               
             </div>
            
@@ -30,7 +52,7 @@ export default function Current() {
         </div>
         <div className="col-1">
         <p className="units">
-              C° F°
+             <span className ="celsius"> C°</span>  F°
             </p>
         </div>
        
@@ -39,19 +61,32 @@ export default function Current() {
       <div className = "row">
       <div className="col-6">
           <div className="timeAndDate">
-            <span id="current-time"> 15:00 </span> <br/>
-            <span id="current-date"> May 27th 2020</span>
+            <span id="current-time"> {weatherData.time} </span> <br/>
+            <span id="current-date"> {weatherData.date}</span>
               
           </div>
       </div>
-      <div className="col-6">
+          <div className="col-6">
+            <div className = "text-capitalize">
         <p className="currentHighLow">
-          High <span id="current-high"> 27 </span> | Low{" "}
-          <span id="current-low"> 15 </span> <br />
-          <span id="current-humidity"> 15% Humidity </span>
+          High <span id="current-high"> {weatherData.high} </span> | Low{" "}
+          <span id="current-low"> {weatherData.low} </span> <br />
+                <span id="current-humidity"> {weatherData.humidity} % Humidity </span>
           <span id="weather-description"> Windy </span>
-          </p></div>
+          </p></div></div>
         </div>
     </div>
   );
+  } else {
+    const apiKey = "ca2fa8705db7885cbca37eb2614b330b0";
+  let city = "Paris"
+  let cityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(cityUrl).then(handleResponse);
+
+
+    return "Loading...";
+
+
+  }
+  
 }
