@@ -66,3 +66,7 @@ font-size: 25px;
 .App .form {
   margin-bottom: 15px;
 }
+
+.App .country {
+  font-size: 20px;
+}
