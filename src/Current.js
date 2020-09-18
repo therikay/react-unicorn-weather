@@ -4,24 +4,26 @@ import axios from "axios";
 
 
 export default function CurrentWeather() {
-    const [weatherData, setWeatherData] = useState({ ready: false });
-  
+    const [weatherData, setWeatherData] = useState({});
+  const [ready, setReady] = useState(false);
   function handleResponse(response) {
     console.log(response.data);
-    setWeatherData({
-        weatherData:true,
-        temperature: Math.round(response.data.main.temp),
-        high: Math.round(response.data.main.temp_max),
-        low: Math.round(response.data.main.temp_min),
-        wind: response.data.wind.speed,
-        city: response.data.name,
-        country: response.data.sys.country,
-        humidity: response.data.main,
-        description: response.data.weather[0].description,
-        iconUrl: "https://openweathermap.org/img/wn/01d@2x.png",
-        icon: response.data.weather[0].icon,
-  });
-   }
+      setWeatherData({
+      time: "15:00",
+      date: "september 18th 2020",
+      temperature: Math.round(response.data.main.temp),
+      high: Math.round(response.data.main.temp_max),
+      low: Math.round(response.data.main.temp_min),
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      country: response.data.sys.country,
+      humidity: response.data.main,
+      description: response.data.weather[0].description,
+      iconUrl: "https://openweathermap.org/img/wn/01d@2x.png",
+      icon: response.data.weather[0].icon,
+      });
+    setReady(true);
+  }
 
   if (weatherData.ready) {
     return (
@@ -34,7 +36,7 @@ export default function CurrentWeather() {
             alt={weatherData.description}
             className="icon"
           />
-          <div className="city" style={{ fontSize: 35, fontWeight: "bold" }}>
+          <div className="city" style={{fontSize: 35, fontWeight: "bold" }}>
             {weatherData.city}, {weatherData.country}
           </div>
 
@@ -78,15 +80,12 @@ export default function CurrentWeather() {
     </div>
   );
   } else {
-    const apiKey = "ca2fa8705db7885cbca37eb2614b330b0";
+    const apiKey = "8c857ce7fed7ba60a40e5e9626433083";
   let city = "Paris"
   let cityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(cityUrl).then(handleResponse);
 
-
-    return "Loading...";
-
-
+   return "Loading...";
   }
   
 }
