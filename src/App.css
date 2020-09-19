@@ -1,5 +1,5 @@
 .App {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   text-align: center;
 }
 
@@ -26,11 +26,10 @@
 }
 
 .App .current-temp {
-  font-size: 95px;
-  padding: 20px 20px 0px 0px;
-  float: left;
-  
-}
+  font-size: 120px;
+  padding: 10px 20px 0px 0px;
+  float:right;
+  }
 
 .App .currentHighLow {
   margin: 0 auto;
@@ -56,17 +55,25 @@
   margin-top: 33px;
   float: right;
   margin-right: 35px;
-font-size: 25px;
+  font-size: 25px;
 }
 
 .App .city {
   color: #5d4b94;
+  margin-left: 15px;
 }
 
 .App .form {
   margin-bottom: 15px;
 }
 
-.App .country {
-  font-size: 20px;
+
+
+
+.App canvas {
+  height: 75px;
+  width: 75px;
+  margin-left:75px;
+  margin-top: 25px;
+  display: inline-block;
 }

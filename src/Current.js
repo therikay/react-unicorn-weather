@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
 
+
 export default function CurrentWeather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -16,10 +17,9 @@ export default function CurrentWeather(props) {
       low: Math.round(response.data.main.temp_min),
       wind: response.data.wind.speed,
       city: response.data.name,
-      country: response.data.sys.country,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 

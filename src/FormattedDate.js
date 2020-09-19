@@ -2,27 +2,27 @@ import React from "react";
 
 export default function FormattedDate(props) {
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri",
+    "Sat",
   ];
   let months = [
-    "January",
-    "February",
+    "Jan",
+    "Febr",
     "March",
     "April",
     "May",
     "June",
     "July",
-    "August",
-    "September",
-    "November",
-    "October",
-    "December",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
   let date = props.date.getDate();
@@ -40,8 +40,8 @@ export default function FormattedDate(props) {
     
      return (
     <div>
-    {hours}:{minutes} <br/> 
-    {day} { date } { month }
+        {hours}:{minutes} <br/> 
+       {day} { date } { month }
     </div>
   );
 }

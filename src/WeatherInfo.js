@@ -1,5 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
+
 
 export default function WeatherInfo(props) {
   return (
@@ -7,20 +9,25 @@ export default function WeatherInfo(props) {
       <div className="currentConditions">
         <div className="row">
           <div className="col-6">
-            <img
-              src="https://openweathermap.org/img/wn/10d@2x.png"
-              alt={props.data.description}
-              className="icon"
-            />
+            <div className="float-left">
+              <WeatherIcon
+                code={props.data.icon}
+                              />
+            </div>
+
+            
             <div className="city" style={{ fontSize: 35, fontWeight: "bold" }}>
-              {props.data.city}, <span className="country"> {props.data.country} </span>
+              {props.data.city}
             </div>
           </div>
           <div className="col-5">
             <div className="currentTemperature">
               <div>
                 {" "}
-                <h1 className="current-temp"> {props.data.temperature} </h1>{" "}
+                <h1 className="current-temp">
+                  {" "}
+                  {props.data.temperature}{" "}
+                </h1>{" "}
               </div>
             </div>
           </div>
@@ -41,7 +48,10 @@ export default function WeatherInfo(props) {
               <p className="currentHighLow">
                 High <span id="current-high"> {props.data.high} </span> | Low{" "}
                 <span id="current-low"> {props.data.low} </span> <br />
-                <span id="current-humidity"> {props.data.humidity} % Humidity </span>
+                <span id="current-humidity">
+                  {" "}
+                  {props.data.humidity} % Humidity{" "}
+                </span>
                 <span id="weather-description"> Windy </span>
               </p>
             </div>
