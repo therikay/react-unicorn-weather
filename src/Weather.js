@@ -41,7 +41,6 @@ export default function CurrentWeather(props) {
     return (
       <div>
         <WeatherInfo data={weatherData} />
-
         <div className="form">
           <form onSubmit={handleSubmit}>
             <input

@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
           </div>
         </div>
         <div className="col-6">
-          <div clssName="float-right">
+          <div className="float-right">
             <Temperature celsius={props.data.temperature} />
           </div>
         </div>
