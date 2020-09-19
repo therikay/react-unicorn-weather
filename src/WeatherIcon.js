@@ -9,7 +9,7 @@ export default function WeatherIcon(props) {
 "02d" : "PARTLY_CLOUDY_DAY",
 "02n" : "PARTLY_CLOUDY_NIGHT",
 "03d" : "PARTLY_CLOUDY_DAY",
-"02n" : "PARTLY_CLOUDY_NIGHT",
+"03n" : "PARTLY_CLOUDY_NIGHT",
 "04d" : "CLOUDYY",
 "04n" : "CLOUDY",
 "09n" : "RAIN",
