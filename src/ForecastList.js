@@ -10,14 +10,30 @@ export default function ForecastList(props) {
 
     function temperature() {
         let temperature = Math.round(props.data.main.temp);
-        
         return `${temperature}°C`
     }
-    return (
-        <div className="ForecastList col">
-            {hours()}
-            <WeatherIcon code={props.data.weather[0].icon} />
-            {temperature()}
-        </div>
-    );
+
+    function fahrenheit() {
+      return `${Math.round((props.data.main.temp * 9) / 5 + 32)}°F`;
+    }
+
+    if (props.units === "celsius") {
+        return (
+            <div className="ForecastList col">
+                {hours()}
+                <WeatherIcon code={props.data.weather[0].icon} />
+                {temperature()}
+            </div>
+        );
+    } else {
+        return (
+            <div className="ForecastList col">
+                {hours()}
+                <WeatherIcon code={props.data.weather[0].icon} />
+                {fahrenheit()}
+            </div>
+        );
+
+    }
+
 }

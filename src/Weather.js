@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
-import WeatherInfo from "./WeatherInfo";
+import WeatherInfo from "./WeatherInfo.js";
 import Forecast from "./Forecast.js";
-
-
 
 export default function CurrentWeather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [units, setUnits] = useState("celsius");
+
   function handleResponse(response) {
     console.log(response);
     setWeatherData({
@@ -34,17 +34,16 @@ export default function CurrentWeather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
-    
   }
-
   function handleCityChange(event) {
     event.preventDefault();
     setCity(event.target.value);
   }
+
   if (weatherData.ready) {
     return (
       <div>
-        <WeatherInfo data={weatherData} />
+        <WeatherInfo data={weatherData} units= {units} setUnits={setUnits}/>
         <div className="form">
           <form onSubmit={handleSubmit}>
             <input
@@ -57,9 +56,10 @@ export default function CurrentWeather(props) {
             <input type="submit" value="My Location" />
           </form>
         </div>
-        <Forecast city={weatherData.city}/>
+        <Forecast city={weatherData.city} units={units} />
       </div>
     );
+    
   } else {
     search();
 
