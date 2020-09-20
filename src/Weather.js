@@ -10,7 +10,7 @@ export default function CurrentWeather(props) {
   const [units, setUnits] = useState("celsius");
 
   function handleResponse(response) {
-   console.log(response);
+    console.log(response);
     setWeatherData({
       ready: true,
       time: "15:00",
@@ -29,19 +29,14 @@ export default function CurrentWeather(props) {
   function locateMe() {
     navigator.geolocation.getCurrentPosition(location);
   }
-  
+
   function location(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
     const apiKey = "a2fa8705db7885cbca37eb2614b330b0";
     let locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(locationUrl).then(handleResponse);
-   
-}
-
-
-
-
+  }
 
   function search() {
     const apiKey = "a2fa8705db7885cbca37eb2614b330b0";
@@ -60,7 +55,7 @@ export default function CurrentWeather(props) {
   if (weatherData.ready) {
     return (
       <div>
-        <WeatherInfo data={weatherData} units= {units} setUnits={setUnits}/>
+        <WeatherInfo data={weatherData} units={units} setUnits={setUnits} />
         <div className="form">
           <form onSubmit={handleSubmit}>
             <input
@@ -70,16 +65,12 @@ export default function CurrentWeather(props) {
               onChange={handleCityChange}
             />
             <input type="submit" value="Search" />
-            <input
-              type="submit"
-              value="My Location"
-              onSubmit={locateMe}/>
+            <input type="submit" value="My Location" onSubmit={locateMe} />
           </form>
         </div>
         <Forecast city={weatherData.city} units={units} />
       </div>
     );
-
   } else {
     search();
 

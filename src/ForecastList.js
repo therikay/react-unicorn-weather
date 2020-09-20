@@ -21,7 +21,7 @@ export default function ForecastList(props) {
         return (
             <div className="ForecastList col">
                 {hours()}
-                <WeatherIcon code={props.data.weather[0].icon} />
+                <WeatherIcon code={props.data.weather[0].icon}/>
                 {temperature()}
             </div>
         );
