@@ -3,7 +3,6 @@ import "./App.css";
 import Weather from "./Weather.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./Footer.js";
-import Forecast from "./Forecast.js";
 
 
 function App() {
@@ -11,8 +10,7 @@ function App() {
     <div className="App">
       <div className="weatherContainer">
         <Weather defaultCity="Cardiff" />
-        <Forecast defaultCity="Cardiff"/>
-      </div>
+        </div>
       <Footer />
     </div>
   );

@@ -52,6 +52,7 @@
 .App .city {
   color: #5d4b94;
   margin-left: 15px;
+  
 }
 
 .App .form {
@@ -62,7 +63,7 @@
 .App canvas {
   height: 75px;
   width: 75px;
-  margin-left:30px;
+  margin-left:34px;
   margin-top: 25px;
   display: inline-block;
 }
