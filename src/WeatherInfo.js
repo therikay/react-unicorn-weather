@@ -35,7 +35,7 @@ export default function WeatherInfo(props) {
             <p className="currentHighLow">
               <span id="current-humidity">
                 {" "}
-                {props.data.humidity} % Humidity{" "}
+                {props.data.humidity}% Humidity{" "}
               </span>{" "}
               <br />
               <span id="weather-description"> {props.data.description} </span>

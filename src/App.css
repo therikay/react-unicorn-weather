@@ -18,19 +18,10 @@
   max-width: 450px;
   color: #5d4b94;
 }
-.App .current-temp {
-  font-size: 120px;
-  padding: 10px;
-  ;
-  }
 
-.App .currentHighLow {
-  margin: 0 auto;
-  margin-bottom: 10px;
-  margin-right:35px;
-  float:right;
+.App .form {
+  margin-bottom: 15px;
 }
-
 
 .App .signature {
   font-family: monospace;
@@ -38,27 +29,6 @@
   color: #bcc2fc;
   size: large;
 }
-
-.weather-description {
-  text-transform: capitalize;
-}
-
-.App .units {
-  margin-right: 25px;
-  margin-top:35px;
-  float:right;
-}
-
-.App .city {
-  color: #5d4b94;
-  margin-left: 15px;
-  
-}
-
-.App .form {
-  margin-bottom: 15px;
-}
-
 
 .App canvas {
   height: 75px;

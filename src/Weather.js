@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo.js";
 import Forecast from "./Forecast.js";
+import "./Weather.css"
 
 export default function CurrentWeather(props) {
   const [city, setCity] = useState(props.defaultCity);
