@@ -6,8 +6,8 @@ export default function Footer() {
       <a href="https://github.com/therikay/react-unicorn-weather">
         Open Source Code{" "}
       </a>{" "}
-    for 🦄 Unicorn Weather by{" "}
-      <a href="https://twitter.com/thereichlin"> Theri Reichlin</a>
+      for 🦄 Unicorn Weather by{" "}
+      <a href="https://www.linkedin.com/in/theri/"> Theri Reichlin</a>
     </div>
   );
 }
